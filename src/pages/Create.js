@@ -1,6 +1,6 @@
 import React from "react";
-import { Typography, ButtonGroup, Container } from "@mui/material";
-import Button from "@mui/material/Button";
+import { Typography, ButtonGroup, Container, Button } from "@mui/material";
+import { AccessAlarm } from "@mui/icons-material";
 
 export default function Create() {
   return (
@@ -23,12 +23,18 @@ export default function Create() {
         color="secondary"
         variant="contained"
         onClick={() => console.log("You clicked me!")}
+        endIcon={<AccessAlarm />}
       >
         Submit
       </Button>
 
       {/* Button variant */}
-      <Button type="submit" color="secondary" variant="outlined">
+      <Button
+        type="submit"
+        color="secondary"
+        variant="outlin ed"
+        startIcon={<AccessAlarm />}
+      >
         Submit
       </Button>
 
@@ -38,6 +44,8 @@ export default function Create() {
         <Button>Button 2</Button>
         <Button>Button 3</Button>
       </ButtonGroup>
+      <br />
+      <AccessAlarm />
     </Container>
   );
 }
