@@ -5,8 +5,10 @@ import {
   Container,
   Button,
   styled,
+  TextField,
+  InputAdornment,
 } from "@mui/material";
-import { AccessAlarm } from "@mui/icons-material";
+import { AccessAlarm, AccountCircle } from "@mui/icons-material";
 
 const CustomButton = styled(Button)(({ theme }) => ({
   backgroundColor: "blue",
@@ -63,8 +65,49 @@ export default function Create() {
         <Button>Button 2</Button>
         <Button>Button 3</Button>
       </ButtonGroup>
+
+      {/* icon */}
       <br />
       <AccessAlarm />
+      <br />
+      <TextField
+        id="outlined-basic"
+        variant="outlined"
+        label="Read Only"
+        defaultValue="Hello World"
+        InputProps={{
+          readOnly: true,
+        }}
+      />
+      <TextField
+        id="filled-basic"
+        label="Filled"
+        variant="filled"
+        error
+        helperText="There is error here."
+      />
+      <TextField
+        id="standard-basic"
+        label="Standard"
+        variant="outlined"
+        multiline
+        maxRows={4}
+        placeholder={"Multi placeholder"}
+        defaultValue="This is multiline input"
+      />
+      <br />
+      <TextField
+        id="input-with-icon-textfield"
+        label="TextField"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="end">
+              <AccountCircle />
+            </InputAdornment>
+          ),
+        }}
+        variant="outlined"
+      />
     </Container>
   );
 }
