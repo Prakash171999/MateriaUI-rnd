@@ -7,6 +7,9 @@ import {
   styled,
   TextField,
   InputAdornment,
+  Paper,
+  Box,
+  Grid,
 } from "@mui/material";
 import { AccessAlarm, AccountCircle } from "@mui/icons-material";
 
@@ -20,6 +23,15 @@ const CustomButton = styled(Button)(({ theme }) => ({
   "&:hover": {
     backgroundColor: "darkblue",
   },
+}));
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#69eede",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  gap: 20,
 }));
 
 export default function Create() {
@@ -108,6 +120,37 @@ export default function Create() {
         }}
         variant="outlined"
       />
+      <hr />
+      <br />
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid xs={6} md={8}>
+          <Item>xs=6 md=8</Item>
+        </Grid>
+        <Grid xs={6} md={4}>
+          <Item>xs=6 md=4</Item>
+        </Grid>
+        <Grid xs={6} md={4}>
+          <Item>xs=6 md=4</Item>
+        </Grid>
+        <Grid xs={6} md={8}>
+          <Item>xs=6 md=8</Item>
+        </Grid>
+      </Grid>
+      <br />
+      <br />
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+        >
+          {Array.from(Array(6)).map((_, index) => (
+            <Grid xs={2} sm={4} md={4} key={index}>
+              <Item>xs=2</Item>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }
