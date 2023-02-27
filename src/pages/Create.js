@@ -1,9 +1,11 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, ButtonGroup, Container } from "@mui/material";
+import Button from "@mui/material/Button";
 
 export default function Create() {
   return (
-    <div>
+    <Container>
+      {/* Typography */}
       <Typography
         variant="h6"
         component="h2"
@@ -13,6 +15,29 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
-    </div>
+
+      {/* Buttons */}
+
+      <Button
+        type="submit"
+        color="secondary"
+        variant="contained"
+        onClick={() => console.log("You clicked me!")}
+      >
+        Submit
+      </Button>
+
+      {/* Button variant */}
+      <Button type="submit" color="secondary" variant="outlined">
+        Submit
+      </Button>
+
+      {/* Button group */}
+      <ButtonGroup color="secondary" variant="contained">
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
+        <Button>Button 3</Button>
+      </ButtonGroup>
+    </Container>
   );
 }
