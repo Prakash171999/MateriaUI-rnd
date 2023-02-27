@@ -1,6 +1,24 @@
 import React from "react";
-import { Typography, ButtonGroup, Container, Button } from "@mui/material";
+import {
+  Typography,
+  ButtonGroup,
+  Container,
+  Button,
+  styled,
+} from "@mui/material";
 import { AccessAlarm } from "@mui/icons-material";
+
+const CustomButton = styled(Button)(({ theme }) => ({
+  backgroundColor: "blue",
+  color: "white",
+  padding: "10px 20px",
+  borderRadius: "5px",
+  border: "none",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: "darkblue",
+  },
+}));
 
 export default function Create() {
   return (
@@ -18,15 +36,16 @@ export default function Create() {
 
       {/* Buttons */}
 
-      <Button
+      <CustomButton
         type="submit"
         color="secondary"
         variant="contained"
         onClick={() => console.log("You clicked me!")}
         endIcon={<AccessAlarm />}
+        // sx={{ fontSize: 30 }}
       >
-        Submit
-      </Button>
+        Submit main
+      </CustomButton>
 
       {/* Button variant */}
       <Button
